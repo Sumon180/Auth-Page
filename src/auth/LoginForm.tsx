@@ -21,7 +21,7 @@ const LoginForm = () => {
                     required
                     className="border border-gray-400 outline-[#655BD3] w-full h-10 pl-3 rounded-md"
                   />
-                  <label className="absolute top-[50%] translate-y-[-60%] text-gray-500 left-[15px]">
+                  <label className="absolute transition-all duration-300 top-[50%] translate-y-[-60%] text-gray-500 left-[15px]">
                     Enter Email
                   </label>
                 </div>
