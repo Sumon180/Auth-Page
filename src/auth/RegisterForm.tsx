@@ -1,11 +1,22 @@
 import { AiOutlineGoogle, AiOutlineTwitter } from "react-icons/ai";
+import { FiEyeOff, FiEye } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa";
 import img from "../assets/image/registerAvatar.png";
 import logo from "../assets/image/logo.svg";
+import { useState } from "react";
 
 // flex items-center justify-center h-screen w-screen  bg-[#f8f7fa]
 
 const RegisterForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const show = () => {
+    setShowPassword(true);
+  };
+  const hide = () => {
+    setShowPassword(false);
+  };
+
   return (
     <>
       <div className="flex items-center justify-between h-screen w-screen bg-white">
@@ -58,7 +69,7 @@ const RegisterForm = () => {
 
                   <div className="relative">
                     <input
-                      type="password"
+                      type={`${showPassword ? "text" : "password"}`}
                       name="psw"
                       id="psw"
                       required
@@ -67,6 +78,22 @@ const RegisterForm = () => {
                     <label className="absolute top-[50%] transition-all duration-300 translate-y-[-60%] text-gray-500 left-[15px]">
                       Enter Password
                     </label>
+                    <FiEyeOff
+                      onClick={show}
+                      className={`${
+                        showPassword
+                          ? "hidden"
+                          : "block absolute top-[50%] translate-y-[-60%] right-[15px] cursor-pointer"
+                      }`}
+                    />
+                    <FiEye
+                      onClick={hide}
+                      className={`${
+                        showPassword
+                          ? "block absolute top-[50%] translate-y-[-60%] right-[15px] cursor-pointer"
+                          : "hidden"
+                      }`}
+                    />
                   </div>
                 </div>
 
