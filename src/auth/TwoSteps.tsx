@@ -86,7 +86,6 @@ const TwoSteps = () => {
                   verify my account
                 </button>
               </div>
-
               <div className="text-center mb-6">
                 <p className="text-gray-500">
                   Didn't get the code?
